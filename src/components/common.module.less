@@ -1,0 +1,21 @@
+.common-form-input() {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.bg-image(@name, @type) when (@type = reactive) {
+  background-image: url('/src/assets/@{name}@2x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url('/src/assets/@{name}@3x.png');
+  }
+}
+.bg-image(@name, @type) when (@type = normal) {
+  background-image: url('/src/assets/@{name}.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
